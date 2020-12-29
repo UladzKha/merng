@@ -1,6 +1,6 @@
-const Post = require("../../models/Post");
+import Post from "../../models/Post.js";
 
-module.exports = {
+const postsResolvers = {
   Query: {
     async getPosts() {
       try {
@@ -12,3 +12,5 @@ module.exports = {
     },
   },
 };
+
+export default postsResolvers;

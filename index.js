@@ -1,9 +1,9 @@
-const { ApolloServer } = require("apollo-server");
-const mongoose = require("mongoose");
+import { ApolloServer } from "apollo-server";
+import mongoose from "mongoose";
 
-const typeDefs = require("./graphql/typeDefs");
-const resolvers = require("./graphql/resolvers");
-const { MONGODB } = require("./config");
+import typeDefs from "./graphql/typeDefs.js";
+import resolvers from "./graphql/resolvers/index.js";
+import { MONGODB }from "./config.js";
 
 const server = new ApolloServer({
   typeDefs,

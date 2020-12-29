@@ -1,6 +1,6 @@
-const gql = require("graphql-tag");
+import gql from "graphql-tag";
 
-module.exports = gql`
+const typeDefs = gql`
   type Post {
     id: ID!
     body: String!
@@ -32,3 +32,5 @@ module.exports = gql`
     login(username: String!, password: String!): User!
   }
 `;
+
+export default typeDefs;
