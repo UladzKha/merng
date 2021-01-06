@@ -27,7 +27,7 @@ const usersResolvers = {
       const { errors, valid } = validateLoginInput(username, password);
 
       if (!valid) {
-        throw new UserInputError("Errors", errors);
+        throw new UserInputError("Errors", {errors});
       }
 
       const user = await User.findOne({ username });
@@ -41,7 +41,7 @@ const usersResolvers = {
 
       if (!match) {
         errors.general = "Wrong credentials";
-        throw new UserInputError("Wrong credentials", errors);
+        throw new UserInputError("Wrong credentials", {errors});
       }
 
       const token = generateToken(user);
