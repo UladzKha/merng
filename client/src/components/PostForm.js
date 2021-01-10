@@ -17,7 +17,6 @@ export default function PostForm() {
         query: FETCH_POSTS_QUERY,
       });
 
-      console.log(data, "DATA");
       proxy.writeQuery({
         query: FETCH_POSTS_QUERY,
         data: {
